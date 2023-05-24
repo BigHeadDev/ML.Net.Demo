@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,16 @@ namespace OnnxClassificationDemo {
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
+
+        }
+        private EmotionPrediction prediction = new EmotionPrediction();
+
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            OpenFileDialog dialog = new OpenFileDialog();
+            if (dialog.ShowDialog().Value) {
+                var result = prediction.Predict(dialog.FileName);
+                MessageBox.Show(result);
+            }
         }
     }
 }

@@ -7,4 +7,15 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML.ImageAnalytics" Version="2.0.1" />
+    <PackageReference Include="Microsoft.ML.OnnxTransformer" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="version-RFB-640.onnx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
