@@ -102,8 +102,8 @@ namespace OnnxDetectDemo {
         }
         public double CalculateIOU(Box boxA, Box boxB) {
             // 计算相交部分的坐标信息
-            float xOverlap = Math.Max(0, Math.Min(boxA.X2, boxB.X2) - Math.Max(boxA.X1, boxB.X1) + 1);
-            float yOverlap = Math.Max(0, Math.Min(boxA.Y2, boxB.Y2) - Math.Max(boxA.Y1, boxB.Y1) + 1);
+            float xOverlap = Math.Max(0, Math.Min(boxA.X2, boxB.X2) - Math.Max(boxA.X1, boxB.X1));
+            float yOverlap = Math.Max(0, Math.Min(boxA.Y2, boxB.Y2) - Math.Max(boxA.Y1, boxB.Y1));
 
             // 计算相交部分的面积和并集部分的面积
             float intersectionArea = xOverlap * yOverlap;
